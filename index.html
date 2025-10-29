@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Book Club Hub</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <header>
+    <h1>📚 Book Club Hub</h1>
+    <p>Your cozy corner for discovering and sharing great reads</p>
+  </header>
+
+  <section class="slider-container">
+    <button class="btn prev" onclick="moveSlide(-1)">❮</button>
+    <div class="slider" id="slider">
+      <div class="card">
+        <img src="https://covers.openlibrary.org/b/id/10522369-L.jpg" alt="Book 1">
+        <h3>The Great Gatsby</h3>
+        <p>by F. Scott Fitzgerald</p>
+      </div>
+      <div class="card">
+        <img src="https://covers.openlibrary.org/b/id/8231996-L.jpg" alt="Book 2">
+        <h3>To Kill a Mockingbird</h3>
+        <p>by Harper Lee</p>
+      </div>
+      <div class="card">
+        <img src="https://covers.openlibrary.org/b/id/240727-L.jpg" alt="Book 3">
+        <h3>1984</h3>
+        <p>by George Orwell</p>
+      </div>
+      <div class="card">
+        <img src="https://covers.openlibrary.org/b/id/295577-L.jpg" alt="Book 4">
+        <h3>Pride and Prejudice</h3>
+        <p>by Jane Austen</p>
+      </div>
+      <div class="card">
+        <img src="https://covers.openlibrary.org/b/id/8225265-L.jpg" alt="Book 5">
+        <h3>The Alchemist</h3>
+        <p>by Paulo Coelho</p>
+      </div>
+    </div>
+    <button class="btn next" onclick="moveSlide(1)">❯</button>
+  </section>
+
+  <footer>
+    <p>Made with ❤️ by Book Club Hub</p>
+  </footer>
+
+  <script>
+    let slideIndex = 0;
+
+    function moveSlide(direction) {
+      const slider = document.getElementById("slider");
+      const cards = document.querySelectorAll(".card");
+      const cardWidth = cards[0].offsetWidth + 20; // width + margin
+      slideIndex += direction;
+
+      if (slideIndex < 0) slideIndex = cards.length - 1;
+      if (slideIndex >= cards.length) slideIndex = 0;
+
+      slider.style.transform = `translateX(-${slideIndex * cardWidth}px)`;
+    }
+  </script>
+
+</body>
+</html>
