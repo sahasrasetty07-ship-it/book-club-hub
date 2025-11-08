@@ -4,67 +4,54 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Book Club Hub</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="idk.css">
 </head>
 <body>
-
   
-    <h1>📚 Book Club Hub</h1>
-    <p>Your cozy corner for discovering and sharing great reads</p>
+  <nav class="navbar">
+    <div class="logo">📚 Book Club Hub</div>
+    <ul class="nav-links">
+      <li><a href="#">Home</a></li>
+      <li><a href="#">About</a></li>
+      <li><a href="#">Events</a></li>
+      <li><a href="#">Join</a></li>
+      <li><a href="#">Contact</a></li>
+    </ul>
+  </nav>
+
+ 
+  <header class="hero">
+    <h1>Welcome to the Book Club Hub</h1>
+    <p>Connect with fellow readers, share your favorite books, and explore new stories together.</p>
+    <a href="#" class="btn">Join the Club</a>
   </header>
 
-  <section class="slider-container">
-    <button class="btn prev" onclick="moveSlide(-1)">❮</button>
-    <div class="slider" id="slider">
-      <div class="card">
-        <img src="https://covers.openlibrary.org/b/id/10522369-L.jpg" alt="Book 1">
-        <h3>The Great Gatsby</h3>
-        <p>by F. Scott Fitzgerald</p>
-      </div>
-      <div class="card">
-        <img src="https://covers.openlibrary.org/b/id/8231996-L.jpg" alt="Book 2">
-        <h3>To Kill a Mockingbird</h3>
-        <p>by Harper Lee</p>
-      </div>
-      <div class="card">
-        <img src="https://covers.openlibrary.org/b/id/240727-L.jpg" alt="Book 3">
-        <h3>1984</h3>
-        <p>by George Orwell</p>
-      </div>
-      <div class="card">
-        <img src="https://covers.openlibrary.org/b/id/295577-L.jpg" alt="Book 4">
-        <h3>Pride and Prejudice</h3>
-        <p>by Jane Austen</p>
-      </div>
-      <div class="card">
-        <img src="https://covers.openlibrary.org/b/id/8225265-L.jpg" alt="Book 5">
-        <h3>The Alchemist</h3>
-        <p>by Paulo Coelho</p>
-      </div>
-    </div>
-    <button class="btn next" onclick="moveSlide(1)">❯</button>
+ 
+  <section class="about">
+    <h2>About Us</h2>
+    <p>Book Club Hub is a vibrant community of readers who gather online and in person to discuss literature from all genres. Whether you love fiction, mystery, or non-fiction — there’s a place for you here.</p>
   </section>
 
-  <footer>
-    <p>Made with ❤️ by Book Club Hub</p>
+ 
+  <section class="events">
+    <h2>Upcoming Events</h2>
+    <div class="event-cards">
+      <div class="event-card">
+        <h3>Monthly Meetup</h3>
+        <p>📅 November 20, 2025</p>
+        <p>Discuss “The Great Gatsby” by F. Scott Fitzgerald.</p>
+      </div>
+      <div class="event-card">
+        <h3>Author Talk</h3>
+        <p>📅 December 5, 2025</p>
+        <p>Join us for a live Q&A with bestselling author Jane Doe.</p>
+      </div>
+    </div>
+  </section>
+
+
+  <footer class="footer">
+    <p>© 2025 Book Club Hub | Made with 💚 and 📖</p>
   </footer>
-
-  <script>
-    let slideIndex = 0;
-
-    function moveSlide(direction) {
-      const slider = document.getElementById("slider");
-      const cards = document.querySelectorAll(".card");
-      const cardWidth = cards[0].offsetWidth + 20; // width + margin
-      slideIndex += direction;
-
-      if (slideIndex < 0) slideIndex = cards.length - 1;
-      if (slideIndex >= cards.length) slideIndex = 0;
-
-      slider.style.transform = `translateX(-${slideIndex * cardWidth}px)`;
-    }
-  </script>
-
 </body>
 </html>
-
